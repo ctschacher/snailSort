@@ -1,0 +1,15 @@
+{
+  "name": "escargot",
+  "version": "1.0.0",
+  "description": "output all elements of a matrix in clockwise spiral order",
+  "main": "escargot.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "ctschacher@axway.com",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^7.0.1",
+    "should": "^13.2.3"
+  }
+}
