@@ -15,6 +15,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
  - output all elements of a matrix in clockwise spiral order
+ 
+ [![SnailSort](https://github.com/ctschacher/snailSort/blob/master/images/snailSort.png)]()
+ 
+ - Result: \[ 1, 2, 3, 6, 9, 8, 7, 4, 5 \]
 
 
 <!-- GETTING STARTED -->
