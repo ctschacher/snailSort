@@ -1,7 +1,7 @@
 const should = require('should');
 const matrix = require('../escargot.js');
 
-displayMatrix = function(matrix) {
+var displayMatrix = function(matrix) {
     if(!Array.isArray(matrix)) console.log('\n\tInput: "' + matrix + '"');
     else {
         console.log("\n\tInput: ");
@@ -14,7 +14,7 @@ displayMatrix = function(matrix) {
     process.stdout.write('\tOutput: ');
 }
 
-describe('Check implementation of escargot algorithm:', function() {
+describe('Check 2d-array implementation of escargot algorithm:', function() {
     var sampleMatrix1 = [
         [1,  2],
         [7,  8]
@@ -39,7 +39,7 @@ describe('Check implementation of escargot algorithm:', function() {
         should(resultArray).eql([1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]);
     });
 
-    sampleMatrix3 = [
+    var sampleMatrix3 = [
         [1, 2, 3, 4, 5, 6, 7, 8],
         [9, 10, 11, 12, 13, 14, 15, 16]
     ];
@@ -50,7 +50,7 @@ describe('Check implementation of escargot algorithm:', function() {
         should(resultArray).eql([1, 2, 3, 4, 5, 6, 7, 8, 16, 15, 14, 13, 12, 11, 10, 9]);
     });
 
-    sampleMatrix4 = [
+    var sampleMatrix4 = [
         [1]
     ]; 
     it('should return an array with single element for a single-element matrix', function() {
@@ -60,7 +60,7 @@ describe('Check implementation of escargot algorithm:', function() {
         should(resultArray).eql([1]);
     });
 
-    sampleMatrix5 = [
+    var sampleMatrix5 = [
         [1,  2,  3,  4,  5,  6, 107]
     ]; 
     it('should return an array for a single-line (one row) matrix', function() {
@@ -70,7 +70,7 @@ describe('Check implementation of escargot algorithm:', function() {
         should(resultArray).eql([1,  2,  3,  4,  5,  6, 107]);
     });
 
-    sampleMatrix6 = [
+    var sampleMatrix6 = [
         [1],
         [7],
         [13],
@@ -86,7 +86,7 @@ describe('Check implementation of escargot algorithm:', function() {
     });
 
 
-    sampleMatrix6b = [
+    var sampleMatrix6b = [
         [1, 2], 
         [7, 8],
         [13, 14],
@@ -101,7 +101,7 @@ describe('Check implementation of escargot algorithm:', function() {
         should(resultArray).eql([1, 2, 8 , 14, 20, 26, 32, 31, 25, 19, 13, 7]);
     });
 
-    sampleMatrix6c = [
+    var sampleMatrix6c = [
         [1, 2, 3], 
         [7, 8, 9],
         [13, 14, 15],
@@ -116,7 +116,7 @@ describe('Check implementation of escargot algorithm:', function() {
         should(resultArray).eql([1, 2, 3, 9, 15, 21, 27, 33, 32, 31, 25, 19, 13, 7, 8, 14, 20, 26]);
     });
 
-    sampleMatrix7 = [
+    var sampleMatrix7 = [
         ['c']
     ]; 
     it('should return an array with single element (character) for a single-element matrix', function() {
