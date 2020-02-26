@@ -1,7 +1,7 @@
 const should = require('should');
 const matrix = require('../escargot_1d.js');
 
-var displayMatrix = function(array, width) {
+var displayMatrix = function(array, width = 0) {
     if(!Array.isArray(array)) console.log('\n\tInput: "' + array + '"');
     else {
         console.log(`\n\tInput array (displayed as matrix with ${width} elements per row):`);
@@ -54,6 +54,21 @@ describe('\n\nCheck 1d-array implementation of escargot algorithm:', function() 
         should(function() {matrix.escargot(sampleMatrix1, 3)}).throw("Input array doesn't form a complete matrix with a width of " + 3);
     });
 
+    var bigSampleMatrix = [
+        1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 
+        13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 
+        25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 
+        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48
+    ];
+    it('should return an array for a matrix with a width of 12 elements', function() {
+        displayMatrix(bigSampleMatrix, 12);
+        var resultArray = matrix.escargot(bigSampleMatrix, 12);
+        process.stdout.write("\tOutput: " );
+        console.log(resultArray);
+        should(resultArray).eql([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 25, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26]);
+    });
+    
+    
     var sampleMatrix2 = [];
     it('should return an empty array', function() {
         displayMatrix(sampleMatrix2);
@@ -104,13 +119,3 @@ describe('\n\nCheck 1d-array implementation of escargot algorithm:', function() 
         should(function() {matrix.escargot(sampleMatrix5, 1)}).throw("Input is not an array");
     });
 });
-
-
-// var bigSampleMatrix = [
-//     1,  2,  3,  4,  5,  6,  7,  8,
-//     9, 10, 11, 12, 13, 14, 15, 16,
-//    17, 18, 19, 20, 21, 22, 23, 24, 
-//    25, 26, 27, 28, 29, 30, 31, 32,
-//    33, 34, 35, 36, 37, 38, 39, 40,
-//    41, 42, 43, 44, 45, 46, 47, 48
-// ];
